@@ -16,5 +16,5 @@ Executando o servidor:
 Executando o cliente:
 - Opção 0 - Executar o comando:
  -- python ./client.py 127.0.0.1:5000 0
-- Opção 0 - Executar o comando:
+- Opção 1 - Executar o comando:
  -- python ./client.py 127.0.0.1:5000 1
