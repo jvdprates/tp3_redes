@@ -48,11 +48,23 @@ class Nets(Resource):
     netjson = ler_json('net.json')
     return {"data": netjson}
 
+class NetIxs(Resource):
+  def get(self, net_id):
+    netjson = ler_json('netixlan.json')['data']
+    res = []
+    for net in netjson:
+      if net['net_id'] == int(net_id):
+        res.append(net['name'])
+      # print('esse eh o ix',ix)
+    return {"data": res}
+
 api.add_resource(HelloWorld, '/')
 api.add_resource(Ix, '/api/ix')
 api.add_resource(IxNets, '/api/ixnets/<string:ix_id>')
-api.add_resource(Nets, '/api/net')
 api.add_resource(NetName, '/api/netname/<string:net_id>')
+
+api.add_resource(Nets, '/api/net')
+api.add_resource(NetIxs, '/api/netixs/<string:net_id>')
 
 if __name__ == "__main__":
   app.run(debug=True)
