@@ -55,7 +55,6 @@ class NetIxs(Resource):
     for net in netjson:
       if net['net_id'] == int(net_id):
         res.append(net['name'])
-      # print('esse eh o ix',ix)
     return {"data": res}
 
 api.add_resource(HelloWorld, '/')
